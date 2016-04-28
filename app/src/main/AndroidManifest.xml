@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ty.lover">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 实时通信模块、推送（若使用该功能，需添加以下声明）START -->
+    <service android:name=".Service.PushService" />
+
+    <receiver android:name=".Service.AVBroadcastReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.intent.action.USER_PRESENT" />
+        </intent-filter>
+    </receiver>
+    <!-- 实时通信模块、推送 END -->
+
+
+    <!-- 反馈组件（若使用该功能，需添加以下声明）START -->
+    <activity android:name="com.avos.avoscloud.feedback.ThreadActivity" />
+
+    <!-- 反馈组件 END -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/label_love"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplishActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.SignActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.ForGetActivity" />
+        <activity android:name=".MainActivity.MerryActivity" />
+        <activity android:name=".MainActivity.MemorialDayActivity" />
+        <activity android:name=".MainActivity.AddMrmoryActivity" />
+        <activity android:name=".MainActivity.HeartActivity" />
+        <activity android:name=".MainActivity.HeartLightActivity" />
+        <activity android:name=".MainActivity.MenuActivity" />
+        <activity android:name=".MainActivity.AddMerryActivity"></activity>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>
